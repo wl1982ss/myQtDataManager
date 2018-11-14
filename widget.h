@@ -15,6 +15,11 @@ public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget();
 
+private slots:
+    void on_sellTypeComboBox_currentIndexChanged(QString type);
+
+    void on_sellBrandComboBox_currentIndexChanged(QString brand);
+
 private:
     Ui::Widget *ui;
 };
