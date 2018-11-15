@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     QTextCodec::setCodecForLocale(QTextCodec::codecForLocale());
     //QTextCodec::setCodecForCStrings(QTextCodec::codecForLocale());
-    if(! createConnection()) return 0;
+    if(! createConnection() || !createXml()) return 0;
 
     Widget w;
     w.show();

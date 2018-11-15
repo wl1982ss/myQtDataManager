@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QDomDocument>
 
 namespace Ui {
 class Widget;
@@ -15,13 +16,30 @@ public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget();
 
+public:
+    enum DateTimeType{Time, Date, DateTime};
+    QString getDateTime(DateTimeType type);
+
 private slots:
     void on_sellTypeComboBox_currentIndexChanged(QString type);
 
     void on_sellBrandComboBox_currentIndexChanged(QString brand);
 
+    void on_sellNumSpinBox_valueChanged(int arg1);
+
+    void on_sellCancelBtn_clicked();
+
+    void on_sellOkBtn_clicked();
+
 private:
     Ui::Widget *ui;
+    QDomDocument doc;
+
+    bool docRead();
+    bool docWrite();
+    void writeXml();
+    void createNodes(QDomElement &date);
+    void showDailyList();
 };
 
 #endif // WIDGET_H
