@@ -38,6 +38,9 @@ static bool createConnection()
     query.exec(QString("insert into brand values('05','海尔','空调', 2899, 60, 10, 50)"));
     query.exec(QString("insert into brand values('06','格力','空调', 2799, 70, 20, 50)"));
 
+    query.exec("create table password(pwd varchar primary key)");
+    query.exec("insert into password values('123456')");
+
     return true;
 
 }

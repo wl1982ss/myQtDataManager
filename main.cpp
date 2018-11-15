@@ -3,6 +3,7 @@
 
 #include <QTextCodec>
 #include "connection.h"
+#include "logindialog.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +14,13 @@ int main(int argc, char *argv[])
     if(! createConnection() || !createXml()) return 0;
 
     Widget w;
-    w.show();
+    LoginDialog dlg;
+    if(dlg.exec() == QDialog::Accepted){
+        w.show();
+        return a.exec();
+    } else {
+        return 0;
+    }
 
-    return a.exec();
+
 }

@@ -26,14 +26,19 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        widget.cpp
+        widget.cpp \
+    pieview.cpp \
+    logindialog.cpp
 
 HEADERS += \
         widget.h \
-    connection.h
+    connection.h \
+    pieview.h \
+    logindialog.h
 
 FORMS += \
-        widget.ui
+        widget.ui \
+    logindialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
